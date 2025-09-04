@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP DEV-12640
+D Development Boards & Kits - AVR Pro Micro - 5V/16MHz
+K
+F https://cdn.sparkfun.com/datasheets/Dev/Arduino/Boards/ProMicro16MHzv1.pdf
+$ENDCMP
+#
+#End Doc Library

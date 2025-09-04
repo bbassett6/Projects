@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NLDD-500H
+D LED Power Supplies 10-56Vin 6-52V 500mA CC PCB Mnt
+K
+F https://www.meanwell.com/webapp/product/search.aspx?prod=NLDD-H
+$ENDCMP
+#
+#End Doc Library

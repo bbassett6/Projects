@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TPS25762CAQRQLRQ1
+D USB Interface IC Automotive USB Type-C PD controller with integrated buck-boost regulator 29-VQFN-HR -40 to 125
+K
+F https://www.ti.com/lit/ds/symlink/tps25762-q1.pdf?ts=1709482168336&ref_url=https%253A%252F%252Fwww.mouser.lt%252F
+$ENDCMP
+#
+#End Doc Library

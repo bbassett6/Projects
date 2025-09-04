@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP UCC28051D
+D PFC Controller for low to medium power applications requiring compliance with IEC 61000-3-2
+K
+F http://www.ti.com/lit/gpn/ucc28051
+$ENDCMP
+#
+#End Doc Library

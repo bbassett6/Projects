@@ -1,0 +1,167 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "132197e1-0f8d-4fc2-b277-08a8c730cb62")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 55.118 50.038)
+		(size 41.91 30.226)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "54e48172-ee6e-4ce7-97f8-43ea6f8ad878")
+		(property "Sheetname" "BOOST_PFC"
+			(at 55.118 49.3264 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Sheetfile" "BOOST_PFC.kicad_sch"
+			(at 55.118 80.8486 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "USBC_PD"
+				(path "/132197e1-0f8d-4fc2-b277-08a8c730cb62"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 49.53)
+		(size 45.212 31.75)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "75cbbcfa-5493-48b0-b0ad-667570128d0f")
+		(property "Sheetname" "FLYBACK"
+			(at 115.57 48.8184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Sheetfile" "FLYBACK.kicad_sch"
+			(at 115.57 81.8646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "USBC_PD"
+				(path "/132197e1-0f8d-4fc2-b277-08a8c730cb62"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 117.348 108.966)
+		(size 38.354 20.828)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7b9c9301-3cde-4584-b454-efca16017966")
+		(property "Sheetname" "CONNECTORS"
+			(at 117.348 108.2544 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CONNECTORS.kicad_sch"
+			(at 117.348 130.3786 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "USBC_PD"
+				(path "/132197e1-0f8d-4fc2-b277-08a8c730cb62"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 179.324 50.8)
+		(size 61.468 30.48)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ed886c2e-2666-4d08-8a51-70a7d9eb036f")
+		(property "Sheetname" "PD_CONTROLLER"
+			(at 179.324 50.0884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "PD_CONTROLLER.kicad_sch"
+			(at 179.324 81.8646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "USBC_PD"
+				(path "/132197e1-0f8d-4fc2-b277-08a8c730cb62"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)

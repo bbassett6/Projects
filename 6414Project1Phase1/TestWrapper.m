@@ -29,7 +29,7 @@ C_f2 = C_s/G1;
 C_c = 1000e-15;
 R_sw = .00010;         % sample and hold res
 FSR = 2.4;
-magnitude = 1.0;
+magnitude = 1.2;
 
 C_var = 0.00;
 Vt_var = 0.0;
@@ -45,7 +45,7 @@ output = sim('newAttempt.slx');
 % plot([1:N/2], fft_db(1:N/2));
 % % legend("original spectrum","noise shaped spectrum");
 %%
-Y = fft(output.Dout1);
+Y = fft(output.Dout);
 
 mag = abs(Y(1:N/2));     
 mag = mag / max(mag);         

@@ -15,7 +15,7 @@ n = 1:N;
 fs = 300e6;
 ts = 1/fs;
 fin = 500/N*fs;
-LGBW = 60*fs;
+LGBW = 30*fs;
 
 k = 1.38e-23;       % boltzman (J/k)
 T = 300;            % temp (k)

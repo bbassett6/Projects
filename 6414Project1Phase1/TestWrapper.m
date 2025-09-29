@@ -20,20 +20,21 @@ LGBW = 30*fs;
 k = 1.38e-23;       % boltzman (J/k)
 T = 300;            % temp (k)
 
-C_cdac = 100000e-15;   % cdac total capacitance
-C_s = 2000000e-15;
+C_s = 10000e-15;     % Cs and Cf are from the switched cap amplifier
 C_f1 = C_s/G1;
 C_f2 = C_s/G1;
 C_c = 1000e-15;
-C_samp = 1000000e-15;   % sample and hold cap
-R_sw = .01;         % sample and hold res
+C_samp = 10000e-15;   % sample and hold cap
+R_sw = 30;         % sample and hold res
 
 FSR = 2.4;
 magnitude = 1.2;
 
-C_var = 0.001;
+C_var = 0.0001;
 Vt_var = 0.01;
 Vt_offset_en = true;
+sample_noise_en = 1;
+amp_noise_en = 1;
 
 %%
 output = sim('newAttempt.slx');

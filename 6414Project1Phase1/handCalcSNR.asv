@@ -1,0 +1,27 @@
+% hand calcs
+startingSNR = 13*6.02+1.76
+
+%% reductions
+%% amplifier noise
+
+noise_power = 4*k*T/C_s
+SNR_amp = 10*log10(VDD^2/noise_power)
+
+%% sampler noise
+
+SNRdiff = VDD^2*C_samp/(4*k*T);
+SNRdiff = 10*log10(SNRdiff)
+% enob = (SNRdiff-1.76)/6.02
+
+%% static settling
+
+T = ts/2
+tau = R_sw*C_samp
+T/tau
+Verr_percent = exp(-T/tau)
+
+%% quantization error from final fine 4b adc
+
+%% SNR total
+
+SNR_tot = -10*log10( 10*-SNRdiff/10)

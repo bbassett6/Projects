@@ -1,62 +1,68 @@
 clear all, close all;
 %% constants init
-B1 = 4;
-Bf = 4;
+B1 = 4;         % bit count for subranging modules
+Bf = 4;         % bit count for final flash quantizer
 
-G1 = 2^(B1-1); % stage 1-2 interstage gain
+G1 = 2^(B1-1);  % stage 1-2 interstage gain
 
-Gdf = 1;         % digital gain for stage final Dout
-Gd3 = 2^(Bf-1);          % digital gain for stage 3 Dout
-Gd2 = Gd3*2^(B1-1);          % digital gain for stage 2 Dout
-Gd1 = Gd2*2^(B1-1);            % digital gain for stage 1 Dout
+Gdf = 1;        % digital gain for stage final Dout
+Gd3 = 2^(Bf-1);         % digital gain for stage 3 Dout
+Gd2 = Gd3*2^(B1-1);     % digital gain for stage 2 Dout
+Gd1 = Gd2*2^(B1-1);     % digital gain for stage 1 Dout
 
 N = 2^16;
 n = 1:N;
 fs = 300e6;
 ts = 1/fs;
-fin = 25000/N*fs;
-LGBW = 60*fs;
+fin = 500/N*fs;
+LGBW = 18*fs;
 
 k = 1.38e-23;       % boltzman (J/k)
 T = 300;            % temp (k)
 
-C_cdac = 100000e-15;   % cdac total capacitance
-C_s = 2000000e-15;
+VDD = 1.2;
+C_s = 5000e-15;         % Cs and Cf are from the switched cap amplifier
 C_f1 = C_s/G1;
 C_f2 = C_s/G1;
 C_c = 1000e-15;
-C_samp = 10000e-15;   % sample and hold cap
-R_sw = 10;         % sample and hold res
+C_samp = 10000e-15;     % sample and hold cap
+R_sw = 15;              % sample and hold res
 
 FSR = 2.4;
 magnitude = 1.2;
 
-C_var = 0.0001;
-Vt_var = 0.001;
-Vt_offset_en = true;
+C_var = 0.0017;         % capacitor mismatch variance
+Vt_var = 0.01;          % ADC mismatch variance
+Vt_offset_en = true;    % ADC mismatch enable
+amp_offset = 0.03;      % residue amplifier offset magnitude
+sample_noise_en = 1;    % enable KT/C noise in sample and hold
+amp_noise_en = 1;       % enable KT/C noise in amplifier
 
 %%
+for Vt_var = 0:0.05:0.5
+ 
 output = sim('newAttempt.slx');
-
 %%
-Y = fft(output.Dout);
+% Y = fft(output.Dout);
+% 
+% mag = abs(Y(1:N/2));     
+% mag = mag / max(mag);         
+% mag_dBFS = 20 * log10(mag);    
+% f = (0:N/2-1)*fs/N;
+% 
+% figure;
+% plot(f, mag_dBFS, 'LineWidth', 1.2);
+% grid on;
+% xlabel('Frequency (Hz)');
+% ylabel('Magnitude (dBFS)');
+% title('Spectrum of Quantized Sine Wave (dBFS)');
 
-mag = abs(Y(1:N/2));     
-mag = mag / max(mag);         
-mag_dBFS = 20 * log10(mag);    
-f = (0:N/2-1)*fs/N;
-
-figure;
-plot(f, mag_dBFS, 'LineWidth', 1.2);
-grid on;
-xlabel('Frequency (Hz)');
-ylabel('Magnitude (dBFS)');
-title('Spectrum of Quantized Sine Wave (dBFS)');
-
-figure
-snr(output.Dout,fs);
-SNR_db = snr(output.Dout,fs)
-ENOB = (SNR_db-1.76)/6.02
+% figure
+% snr(output.Dout,fs,1);
+Vt_var
+SNR_db = snr(output.Dout,fs,2)
+end
+% ENOB = (SNR_db-1.76)/6.02
 % 
 % fft_lin = fft(output.Dout(1:N));
 % 
